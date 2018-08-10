@@ -1,0 +1,52 @@
+#include<stdlib.h>
+
+
+
+void sorting_of_data()												/*DEFINATION OF FUNCTION FOR SORTING ACCORDING TO ROLL NUMBER*/
+	  {
+		  struct class_record *loc,*preptr;
+		  struct class_record *temp;
+		  if(start==NULL)
+		  {
+			  printf("\nUNDERFLOW");
+			  }
+			  else if(start->next==NULL)
+			  {
+				  loc=start;
+				  
+				  }
+				  else
+				  {
+					  loc=start;
+					  for(int i=0;i<=count_sort;i++)
+					  {
+						  preptr=loc;
+						  loc=loc->next;
+						  if(loc->roll_no>loc->next->roll_no)
+						  {
+							  if(preptr==start)
+							  {
+								if(loc->roll_no>loc->next->roll_no)
+								{
+									temp=loc->next;
+									loc->next=loc->next->next;
+									temp->next=loc;
+									start=temp;
+							    }
+							  }
+							  else
+							  {
+									if(loc->roll_no>loc->next->roll_no)
+								{
+								  temp=loc->next;
+								  loc->next=loc->next->next;
+								  temp->next=loc;
+								  preptr->next=temp;
+								}
+							  }
+							  
+							  
+						  }
+					  }
+				  }
+	  }
